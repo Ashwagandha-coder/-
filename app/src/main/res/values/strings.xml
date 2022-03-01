@@ -2,6 +2,6 @@
     <string name="app_name">Android Core</string>
     <string name="agreement_full_text">By pressing next button you confirm the agreement and
         privacy political</string>
-    <string name="privacy_politica">privacy policity</string>
+    <string name="privacy_politicy">privacy policity</string>
     <string name="confidental_info">agreement</string>
 </resources>
