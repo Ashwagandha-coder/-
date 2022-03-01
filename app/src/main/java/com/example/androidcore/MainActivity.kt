@@ -15,5 +15,6 @@ class MainActivity : AppCompatActivity() {
         textView = findViewById<TextView>(R.id.Main_Text)
 
     }
+    
 
 }
