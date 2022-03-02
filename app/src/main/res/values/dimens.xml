@@ -1,5 +1,5 @@
 <resources>
 
-    <dimen name = "size_text">16dp</dimen>
+    <dimen name = "size_text">100dp</dimen>
 
 </resources>
