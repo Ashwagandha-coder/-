@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.TextPaint
+import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.view.View
 import android.widget.TextView
@@ -15,13 +16,13 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var textView: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        textView = findViewById<TextView>(R.id.Main_Text)
+        var textView: TextView = findViewById<TextView>(R.id.Main_Text)
 
         // получение текста в перем
 
@@ -64,6 +65,13 @@ class MainActivity : AppCompatActivity() {
         }
         spannableString.setSpan(confidentalClick,full_text.indexOf(confidental),
             full_text.indexOf(confidental) + confidental.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        spannableString.setSpan(policityClick,full_text.indexOf(policity),
+            full_text.indexOf(policity) + policity.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        textView.run { text = spannableString
+            movementMethod = LinkMovementMethod.getInstance()
+        highlightColor = Color.TRANSPARENT }
 
 
 
