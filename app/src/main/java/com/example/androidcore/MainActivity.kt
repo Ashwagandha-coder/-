@@ -1,13 +1,17 @@
 package com.example.androidcore
 
+import android.graphics.Color
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.text.SpannableString
+import android.text.Spanned
 import android.text.TextPaint
 import android.text.style.ClickableSpan
 import android.view.View
 import android.widget.TextView
-import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,16 +33,37 @@ class MainActivity : AppCompatActivity() {
 
         val confidentalClick = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                Snackbar.make(widget, "Go to Link", SnackBar.LENGTH_SHORT).show()
+                Snackbar.make(widget, "Go to Link", Snackbar.LENGTH_SHORT).show()
                 TODO("Not yet implemented")
             }
 
+
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
+                ds.isUnderlineText = true
+                ds.color = Color.parseColor("#FF3700B3")
+
 
 
             }
         }
+
+        val policityClick = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                Snackbar.make(widget, "Go to Link2", Snackbar.LENGTH_SHORT).show()
+                TODO("Not yet implemented")
+            }
+
+
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = true
+                ds.color = Color.parseColor("#FF3700B3")
+
+            }
+        }
+        spannableString.setSpan(confidentalClick,full_text.indexOf(confidental),
+            full_text.indexOf(confidental) + confidental.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
 
 
