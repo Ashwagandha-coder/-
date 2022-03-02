@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var textView: TextView = findViewById<TextView>(R.id.Main_Text)
+        val textView: TextView = findViewById<TextView>(R.id.Main_Text)
 
         // получение текста в перем
 
@@ -69,9 +69,10 @@ class MainActivity : AppCompatActivity() {
         spannableString.setSpan(policityClick,full_text.indexOf(policity),
             full_text.indexOf(policity) + policity.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-        textView.run { text = spannableString
+        textView.run {
+            text = spannableString
             movementMethod = LinkMovementMethod.getInstance()
-        highlightColor = Color.TRANSPARENT }
+            highlightColor = Color.TRANSPARENT }
 
 
 
